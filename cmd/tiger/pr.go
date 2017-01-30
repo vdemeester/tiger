@@ -9,7 +9,12 @@ type prCmd struct {
 }
 
 func init() {
-	commands["pr"] = &prCmd{}
+	cmd := &prCmd{}
+	commands[cmd.Name()] = cmd
+}
+
+func (c *prCmd) Name() string {
+	return "pr"
 }
 
 func (c *prCmd) Execute(args []string) error {

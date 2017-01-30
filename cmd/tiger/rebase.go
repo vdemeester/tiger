@@ -5,14 +5,19 @@ import (
 	"fmt"
 )
 
-type rebaseCmd struct {
+type rebasePrCmd struct {
 }
 
 func init() {
-	commands["rb"] = &rebaseCmd{}
+	cmd := &rebasePrCmd{}
+	commands[cmd.Name()] = cmd
 }
 
-func (c *rebaseCmd) Execute(args []string) error {
+func (c *rebasePrCmd) Name() string {
+	return "rebase-pr"
+}
+
+func (c *rebasePrCmd) Execute(args []string) error {
 	fs := flag.NewFlagSet(args[0], flag.ExitOnError)
 	flUpstream := fs.String("upstream", "upstream", "upstream remote name")
 	fs.Parse(args[1:])
