@@ -24,7 +24,7 @@ func Run(hook string) error {
 	}
 	// Execute each hook
 	for _, f := range files {
-		fmt.Fprintf(os.Stderr, "Running hook %s/%s\n", hook, f.Name())
+		fmt.Fprintf(os.Stderr, "🐅 Running hook %s/%s\n", hook, f.Name())
 		cmd := exec.Command(filepath.Join(hookPath, f.Name()))
 		if err := cmd.Run(); err != nil {
 			return errors.Wrapf(err, "error running hook %s/%s", hook, f.Name())

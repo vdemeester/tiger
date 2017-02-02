@@ -26,11 +26,11 @@ station.
 ```bash
 λ ls
 λ tiger st
-🐯 nix-direnv detected for this repo, files not present, updating the files
+🐅 nix-direnv detected for this repo, files not present, updating the files
 λ ls
 # […]
 # Later, the file has been update (by some other means)
 λ tiger fetch
-🐯 nix-direnv detected for this repo, files out of date, updating the files
+🐅 nix-direnv detected for this repo, files out of date, updating the files
 
 ```
